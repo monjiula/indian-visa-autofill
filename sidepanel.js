@@ -1,5 +1,5 @@
 /**
- * sidepanel.js — Indian Visa Autofill Pro v2.0
+ * sidepanel.js — Indian Visa Autofill v2.0
  */
 
 import { getDocument, GlobalWorkerOptions } from './build/pdf.mjs';
