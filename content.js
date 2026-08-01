@@ -663,8 +663,8 @@ async function routeAndFill(data) {
         await fillSelectWait('countryname_id', 'BANGLADESH');
         
         const mission = (data.missioncode_id && data.missioncode_id !== "NILL") ? data.missioncode_id : 'RAJSHAHI';
-        await fillSelectWait('missioncode_id', mission);
-        await fillSelectWait('nationality_id', 'BANGLADESH');
+        await fillSelectWait('missioncode_id', mission, 15000);
+        await fillSelectWait('nationality_id', 'BANGLADESH', 15000);
         fillText('dob_id', data.dob);
         
         openVisaStarterModal(data);
