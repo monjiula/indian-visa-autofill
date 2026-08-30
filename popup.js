@@ -372,7 +372,7 @@ function showStatus(text, type) {
 async function loadAdvancedSettings() {
   const stored = await chrome.storage.local.get(['iv_model', 'iv_autoDeleteDays', 'iv_fillMissingOnly', 'iv_promptBGD', 'iv_promptPassport']);
   
-  if ($('modelSelect')) $('modelSelect').value = stored.iv_model || 'gemini-2.5-flash';
+  if ($('modelSelect')) $('modelSelect').value = stored.iv_model || 'gemini-3.6-flash';
   if ($('autoDeleteSelect')) $('autoDeleteSelect').value = stored.iv_autoDeleteDays || '0';
   if ($('fillMissingOnly')) $('fillMissingOnly').checked = stored.iv_fillMissingOnly || false;
   if ($('promptBGD')) $('promptBGD').value = stored.iv_promptBGD || '';
