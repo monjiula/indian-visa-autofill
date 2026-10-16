@@ -77,7 +77,17 @@ function extractVisaDetailsFromText(text) {
   if (motherMatch) res.mother_name = motherMatch[1].trim();
 
   const spouseMatch = text.match(/Spouse\s+([A-Za-z\s\.\-]+?)(?=\s+BANGLADESH|\s+INDIAN|\s+PAKISTAN)/i);
-  if (spouseMatch) res.spouse_name = spouseMatch[1].trim();
+  if (spouseMatch) {
+    const sName = spouseMatch[1].trim();
+    if (!["NILL", "NA", "UNKNOWN", "NULL"].includes(sName.toUpperCase())) {
+      res.spouse_name = sName;
+      res.marital_status = "0";
+    } else {
+      res.marital_status = "1";
+    }
+  } else {
+    res.marital_status = "1";
+  }
 
   // Section E Occupation regex:
   const occMatch = text.match(/Present\s*Occupation\s+([A-Za-z\s]+?)(?=\s*Designation|Employer|$)/i);
@@ -100,11 +110,20 @@ function extractVisaDetailsFromText(text) {
   res.isd_code1 = "880";
   res.nationality = "BANGLADESH";
   res.nationality_by = "BY BIRTH";
+
+  res.father_place_of_birth = res.pobTown || "";
   res.father_nationality = "BANGLADESH";
-  res.mother_nationality = "BANGLADESH";
+  res.father_previous_nationality = "BANGLADESH";
   res.father_country_of_birth = "BANGLADESH";
+
+  res.mother_place_of_birth = res.pobTown || "";
+  res.mother_nationality = "BANGLADESH";
+  res.mother_previous_nationality = "BANGLADESH";
   res.mother_country_of_birth = "BANGLADESH";
+
+  res.spouse_place_of_birth = res.pobTown || "";
   res.spouse_nationality = "BANGLADESH";
+  res.spouse_previous_nationality = "BANGLADESH";
   res.spouse_country_of_birth = "BANGLADESH";
 
   return res;
