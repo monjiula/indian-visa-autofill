@@ -657,6 +657,62 @@
             color: #991b1b !important;
             font-weight: 700 !important;
         }
+    
+        /* DARK MODE OVERRIDES */
+        body.dark-mode {
+            --bg-main: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --border-color: #334155;
+            background-color: var(--bg-main) !important;
+            color: var(--text-main) !important;
+        }
+        body.dark-mode .card,
+        body.dark-mode .app-header {
+            background: var(--card-bg) !important;
+            border-color: var(--border-color) !important;
+            color: var(--text-main) !important;
+        }
+        body.dark-mode input,
+        body.dark-mode select,
+        body.dark-mode textarea {
+            background: #0f172a !important;
+            color: #f8fafc !important;
+            border-color: #334155 !important;
+        }
+        body.dark-mode .profile-item {
+            background: #1e293b !important;
+            border-color: #334155 !important;
+            color: #f8fafc !important;
+        }
+        body.dark-mode .profile-item span {
+            color: #f8fafc !important;
+        }
+        body.dark-mode #userNameDisplay {
+            background: #312e81 !important;
+            color: #c7d2fe !important;
+        }
+        body.dark-mode .search-box {
+            background: #0f172a !important;
+            color: #f8fafc !important;
+            border-color: #334155 !important;
+        }
+        body.dark-mode .search-box::placeholder {
+            color: #64748b !important;
+        }
+        body.dark-mode .icon-btn,
+        body.dark-mode .settings-btn {
+            background: #334155 !important;
+            border-color: #475569 !important;
+            color: #f8fafc !important;
+        }
+        body.dark-mode #profileList,
+        body.dark-mode #hiddenProfileList {
+            background: #0f172a !important;
+            border-color: #334155 !important;
+        }
+
     </style>
 </head>
 
@@ -715,6 +771,7 @@
                         <path
                             d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                     </svg></a>
+                <button type="button" id="themeToggleBtn" class="icon-btn" style="background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; width:24px; height:24px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; font-size:12px;" title="Toggle Light/Dark Mode">🌓</button>
                 <button type="button" id="openSettingsBtn" class="icon-btn" style="background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; width:24px; height:24px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; font-size:12px;" title="Gemini AI Settings">⚙️</button>
                 <a id="addBalanceBtn" class="hidden" style="display:none !important;"></a>
                 <span class="credits-pill" style="background:#dcfce7; color:#15803d; border-color:#86efac; animation:none;">⚡ 100% FREE</span></span>
