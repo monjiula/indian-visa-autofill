@@ -450,58 +450,7 @@
             }
         }
 
-        /* 50% OFF PROMO BADGE */
-        .promo-badge {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            color: #ffffff;
-            font-size: 8px;
-            font-weight: 800;
-            padding: 1px 5px;
-            border-radius: 12px;
-            margin-left: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            display: inline-block;
-            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.35);
-            border: 1.5px solid #ffffff;
-            animation: promo-shake 2.5s infinite ease-in-out;
-        }
-
-        /* GOLD VARIATION FOR ACTIVE DISCOUNTS */
-        #btn-passport-mode.active .promo-badge {
-            background: #ffffff;
-            color: #b45309;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-            border-color: #fcd34d;
-        }
-
-        @keyframes promo-shake {
-
-            0%,
-            100% {
-                transform: rotate(0deg) scale(1);
-            }
-
-            5% {
-                transform: rotate(-5deg) scale(1.05);
-            }
-
-            10% {
-                transform: rotate(5deg) scale(1.05);
-            }
-
-            15% {
-                transform: rotate(-3deg) scale(1.05);
-            }
-
-            20% {
-                transform: rotate(3deg) scale(1.05);
-            }
-
-            25% {
-                transform: rotate(0deg) scale(1.05);
-            }
-        }
+        /* PASSPORT BUTTON */
 
         /* LOGIN WALL */
         #login-view {
@@ -782,8 +731,7 @@
         <div id="main-content">
             <div class="toggle-container">
                 <button class="toggle-btn active" id="btn-pdf-mode">BGD PDF</button>
-                <button class="toggle-btn" id="btn-passport-mode">PASSPORT <span class="promo-badge">50%
-                        OFF</span></button>
+                <button class="toggle-btn" id="btn-passport-mode">PASSPORT</button>
                 <div id="toggle-slider"></div>
             </div>
 
@@ -895,19 +843,25 @@
             <div style="margin-bottom: 12px;">
                 <label style="display:block; font-size:11.5px; font-weight:700; color:#334155; margin-bottom:5px;">Gemini API Key:</label>
                 <div style="display:flex; gap:5px;">
-                    <input type="password" id="geminiApiKeyInput" placeholder="Paste AI Studio API Key..." style="flex:1; padding:7px 9px; border:1px solid #cbd5e1; border-radius:6px; font-size:11.5px; box-sizing:border-box; outline:none;">
+                    <input type="password" id="geminiApiKeyInput" placeholder="Paste AI Studio API Key(s)..." style="flex:1; padding:7px 9px; border:1px solid #cbd5e1; border-radius:6px; font-size:11.5px; box-sizing:border-box; outline:none;">
                     <button type="button" id="toggleApiKeyVisBtn" style="background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; padding:0 8px; font-size:12px; cursor:pointer;" title="Show/Hide">👁</button>
                 </div>
-                <div style="font-size:10px; color:#64748b; margin-top:5px;">
+                <div style="font-size:10px; color:#64748b; margin-top:5px; line-height:1.4;">
                     Get a 100% free key: <a href="https://aistudio.google.com/apikey" target="_blank" style="color:#4f46e5; font-weight:700; text-decoration:none;">Google AI Studio ➔</a>
+                    <span style="display:block; margin-top:3px; color:#059669; font-weight:600;">💡 Tip: You can paste multiple keys separated by commas for quota backup.</span>
                 </div>
             </div>
 
             <div style="margin-bottom: 14px;">
                 <label style="display:block; font-size:11.5px; font-weight:700; color:#334155; margin-bottom:5px;">AI Model:</label>
                 <select id="geminiModelSelect" style="width:100%; padding:7px 9px; border:1px solid #cbd5e1; border-radius:6px; font-size:11.5px; box-sizing:border-box; background:white; outline:none;">
-                    <option value="gemini-3.6-flash">Gemini 3.6 Flash (Latest / Recommended)</option>
+                    <option value="gemini-3.6-flash">Gemini 3.6 Flash (Fast & Accurate)</option>
+                    <option value="gemini-3.5-flash-lite">Gemini 3.5 Flash Lite (High Quota)</option>
+                    <option value="gemini-1.5-flash">Gemini 1.5 Flash (1,500 req/day Free)</option>
                     <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                    <option value="gemini-1.5-flash-8b">Gemini 1.5 Flash 8B (Fast / 1,500 req/day)</option>
+                    <option value="gemini-1.5-pro">Gemini 1.5 Pro (High Accuracy - 50 req/day)</option>
                 </select>
             </div>
 
