@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Indian Visa Autofill Pro",
-  "version": "10.0.0",
+  "version": "10.1.3",
   "description": "AI-powered Indian Visa Autofill Pro v10.0 with Gemini 3.6 Flash, automatic document processing, and multi-portal assistants.",
   "permissions": [
     "storage",
@@ -74,7 +74,10 @@
         "editor.js",
         "permission.html",
         "permission.js",
-        "states-and-districts.json"
+        "update.html",
+        "states-and-districts.json",
+        "visa-undertaking-template.jpg",
+        "consent-form-template.jpg"
       ],
       "matches": [
         "<all_urls>"
